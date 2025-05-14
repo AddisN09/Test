@@ -30,9 +30,20 @@ function fourth(age){
 }
 fourth.prototype=Object.create(third.prototype);
 fourth.prototype.constructor=fourth;
-
 fourth.prototype.display=function(){
    console.log("I am " + this.age + " years old.");
 }
+function fiveth(name,school,age){
+  third.call(this, name);
+  this. school=school;
+  this.age=age;
+}
+fiveth.prototype=Object.create(fourth.prototype);
+fiveth.prototype.constructor=fiveth;
+fiveth.prototype.display=function(){
+  console.log(`my name is ${this.name} and i am ${this.age} years old am learning at ${this.school} secondary school.`)
+}
 let obj=new fourth(21);
 obj.display();
+let student=new fiveth("kebede","Addis Ketema",16);
+student.display();
